@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Bytes Feed</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/style.css">
+<script src="js/enhancements.js"></script>
+<link rel="stylesheet" href="css/animations.css">
+
+<script src="js/ui-effects.js"></script>
+
+</head>
+
+<body>
+
+<header class="app-header">
+
+<h2>Bytes</h2>
+
+<div>
+<span>🔔</span>
+<span>💬</span>
+</div>
+
+</header>
+
+
+<!-- STORIES -->
+
+<div class="stories">
+
+<div class="story">
+<img src="assets/user.png">
+<p>You</p>
+</div>
+
+<div class="story">
+<img src="assets/user.png">
+<p>Rahul</p>
+</div>
+
+<div class="story">
+<img src="assets/user.png">
+<p>Ananya</p>
+</div>
+
+<div class="story">
+<img src="assets/user.png">
+<p>Dev</p>
+</div>
+
+</div>
+
+
+<!-- CREATE POST -->
+
+<div class="card create-post">
+
+<img src="assets/user.png" class="avatar">
+
+<input id="postInput" placeholder="Share a learning Byte...">
+
+<button onclick="createPost()">Post</button>
+
+</div>
+
+
+<!-- FEED -->
+
+<div id="feed"></div>
+
+
+<!-- FLOAT BUTTON -->
+
+<button class="fab">+</button>
+
+
+<!-- NAVIGATION -->
+
+<nav class="bottom-nav">
+
+<a href="feed.html">🏠</a>
+<a href="shorts.html">🎥</a>
+<a href="explore.html">🔍</a>
+<a href="qa.html">❓</a>
+<a href="profile.html">👤</a>
+
+</nav>
+<button onclick="createPost()">Post</button>
+
+<script src="js/feed.js"></script>
+
+</body>
+
+</html>

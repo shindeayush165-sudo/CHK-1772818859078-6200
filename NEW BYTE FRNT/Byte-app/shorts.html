@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bytes - Shorts</title>
+
+<style>
+
+/* =========================
+GLOBAL
+========================= */
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+background:black;
+font-family:system-ui, Arial, Helvetica, sans-serif;
+color:white;
+overflow:hidden;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.app-header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 20px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+/* FIXED GRADIENT LOGO */
+
+.logo{
+font-size:20px;
+font-weight:700;
+background:linear-gradient(90deg,#4f7cff,#00d4ff);
+
+background-clip:text;
+-webkit-background-clip:text;
+
+color:transparent;
+-webkit-text-fill-color:transparent;
+}
+
+/* =========================
+SHORTS CONTAINER
+========================= */
+
+.shorts-container{
+height:100vh;
+overflow-y:scroll;
+scroll-snap-type:y mandatory;
+}
+
+.shorts-container::-webkit-scrollbar{
+display:none;
+}
+
+/* =========================
+SINGLE SHORT
+========================= */
+
+.short{
+height:100vh;
+scroll-snap-align:start;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+padding-top:60px;
+}
+
+/* =========================
+INSTAGRAM REEL EMBED
+========================= */
+
+.short iframe{
+width:100%;
+max-width:380px;
+height:80vh;
+border-radius:12px;
+border:none;
+}
+
+/* =========================
+OVERLAY UI
+========================= */
+
+.short-overlay{
+position:absolute;
+bottom:70px;
+left:20px;
+right:20px;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+pointer-events:none;
+}
+
+/* TEXT SECTION */
+
+.short-text{
+max-width:70%;
+}
+
+.short-text h3{
+margin:0;
+font-size:16px;
+}
+
+.short-text p{
+margin:4px 0;
+font-size:14px;
+color:#ccc;
+}
+
+/* ACTION BUTTONS */
+
+.short-actions{
+display:flex;
+flex-direction:column;
+gap:22px;
+pointer-events:auto;
+}
+
+.short-actions button{
+background:none;
+border:none;
+font-size:26px;
+color:white;
+cursor:pointer;
+transition:0.2s;
+}
+
+.short-actions button:hover{
+transform:scale(1.2);
+}
+
+/* =========================
+BOTTOM NAVIGATION
+========================= */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+width:100%;
+display:flex;
+justify-content:space-around;
+padding:12px 0;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+z-index:100;
+}
+
+.bottom-nav a{
+color:white;
+font-size:22px;
+text-decoration:none;
+transition:0.2s;
+}
+
+.bottom-nav a:hover{
+transform:scale(1.2);
+}
+
+/* =========================
+MOBILE RESPONSIVE
+========================= */
+
+@media (max-width:600px){
+
+.short iframe{
+height:75vh;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="app-header">
+<div class="logo">Bytes</div>
+</header>
+
+
+<!-- SHORTS CONTAINER -->
+
+<div class="shorts-container">
+
+
+<!-- SHORT 1 -->
+
+<div class="short">
+
+<iframe src="https://www.instagram.com/reel/C5t3Gf4pQJb/embed"></iframe>
+
+<div class="short-overlay">
+
+<div class="short-text">
+<h3>@techbytes</h3>
+<p>Learn coding daily 🚀</p>
+</div>
+
+<div class="short-actions">
+<button>❤️</button>
+<button>💬</button>
+<button>🔗</button>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SHORT 2 -->
+
+<div class="short">
+
+<iframe src="https://www.instagram.com/reel/C5t3Gf4pQJb/embed"></iframe>
+
+<div class="short-overlay">
+
+<div class="short-text">
+<h3>@learnwithbytes</h3>
+<p>JavaScript tips in 30 seconds</p>
+</div>
+
+<div class="short-actions">
+<button>❤️</button>
+<button>💬</button>
+<button>🔗</button>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SHORT 3 -->
+
+<div class="short">
+
+<iframe src="https://www.instagram.com/reel/C8Lq6q5yqkp/embed"></iframe>
+
+<div class="short-overlay">
+
+<div class="short-text">
+<h3>@growthbytes</h3>
+<p>AI tools you must know</p>
+</div>
+
+<div class="short-actions">
+<button>❤️</button>
+<button>💬</button>
+<button>🔗</button>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SHORT 4 -->
+
+<div class="short">
+
+<iframe src="https://www.instagram.com/reel/C8Lq6q5yqkp/embed"></iframe>
+
+<div class="short-overlay">
+
+<div class="short-text">
+<h3>@bytecontainer</h3>
+<p>Dev tools you should try</p>
+</div>
+
+<div class="short-actions">
+<button>❤️</button>
+<button>💬</button>
+<button>🔗</button>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SHORT 5 -->
+
+<div class="short">
+
+<iframe src="https://www.instagram.com/reel/C8Lq6q5yqkp/embed"></iframe>
+
+<div class="short-overlay">
+
+<div class="short-text">
+<h3>@growthdevops</h3>
+<p>DevOps tips for beginners</p>
+</div>
+
+<div class="short-actions">
+<button>❤️</button>
+<button>💬</button>
+<button>🔗</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BOTTOM NAVIGATION -->
+
+<div class="bottom-nav">
+<a href="feed.html">🏠</a>
+<a href="explore.html">🔎</a>
+<a href="shorts.html">🎥</a>
+<a href="qa.html">❓</a>
+<a href="profile.html">👤</a>
+</div>
+
+
+</body>
+</html>

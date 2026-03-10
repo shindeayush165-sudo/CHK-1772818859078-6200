@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Explore</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<style>
+
+/* SEARCH BAR */
+
+.search-container{
+padding:15px;
+display:flex;
+justify-content:center;
+}
+
+.search-bar{
+width:90%;
+max-width:500px;
+padding:12px;
+border-radius:25px;
+border:none;
+outline:none;
+background:#1b2135;
+color:white;
+font-size:16px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="app-header">
+<div class="logo">Bytes</div>
+</header>
+
+
+<!-- SEARCH BAR -->
+
+<div class="search-container">
+
+<input 
+type="text" 
+class="search-bar" 
+placeholder="Search students, skills, posts..."
+onkeyup="searchContent()"
+>
+
+</div>
+
+
+<!-- RESULTS -->
+
+<div id="searchResults"></div>
+
+
+
+<div class="bottom-nav">
+<a href="feed.html">🏠</a>
+<a href="explore.html">🔎</a>
+<a href="shorts.html">🎥</a>
+<a href="qa.html">❓</a>
+<a href="profile.html">👤</a>
+</div>
+
+
+<script>
+
+async function searchContent(){
+
+const query = document.querySelector(".search-bar").value
+
+if(query.length < 2) return
+
+const res = await fetch(
+`http://localhost:5000/api/search?q=${query}`
+)
+
+const data = await res.json()
+
+const container = document.getElementById("searchResults")
+
+container.innerHTML=""
+
+data.posts.forEach(post=>{
+
+container.innerHTML += `
+
+<div class="card">
+
+<h3>${post.user}</h3>
+<p>${post.content}</p>
+
+</div>
+
+`
+
+})
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* =========================
+GLASSMORPHISM CARDS
+========================= */
+
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:16px;
+}
+
+/* =========================
+SMOOTH PAGE FADE
+========================= */
+
+body{
+animation:fadePage 0.6s ease;
+}
+
+@keyframes fadePage{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* =========================
+POST LIKE ANIMATION
+========================= */
+
+.like-animation{
+position:absolute;
+font-size:80px;
+color:#ff2d55;
+animation:heartPop 0.6s ease forwards;
+pointer-events:none;
+}
+
+@keyframes heartPop{
+
+0%{
+transform:scale(0);
+opacity:0;
+}
+
+50%{
+transform:scale(1.3);
+opacity:1;
+}
+
+100%{
+transform:scale(1);
+opacity:0;
+}
+
+}
+
+/* =========================
+BUTTON HOVER GLOW
+========================= */
+
+button{
+transition:all 0.25s ease;
+}
+
+button:hover{
+box-shadow:0 0 10px #4f7cff;
+}
+
+/* =========================
+CARD HOVER EFFECT
+========================= */
+
+.post-card{
+transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-card:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* =========================
+STORY HOVER EFFECT
+========================= */
+
+.story img{
+transition:0.25s;
+}
+
+.story img:hover{
+transform:scale(1.15);
+}
+
+/* =========================
+NAV ICON ANIMATION
+========================= */
+
+.bottom-nav a{
+transition:0.25s;
+}
+
+.bottom-nav a:hover{
+transform:scale(1.25);
+color:#4f7cff;
+}
+
+/* =========================
+FLOATING BUTTON PULSE
+========================= */
+
+.fab{
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+box-shadow:0 0 0 0 rgba(79,124,255,0.7);
+}
+
+70%{
+box-shadow:0 0 0 20px rgba(79,124,255,0);
+}
+
+100%{
+box-shadow:0 0 0 0 rgba(79,124,255,0);
+}
+
+}
+
+/* =========================
+SHORTS VIDEO GRADIENT OVERLAY
+========================= */
+
+.short::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+height:40%;
+background:linear-gradient(
+transparent,
+rgba(0,0,0,0.8)
+);
+}
+
+/* =========================
+SMOOTH SCROLL
+========================= */
+
+html{
+scroll-behavior:smooth;
+}
+
+/* =========================
+SCROLLBAR STYLE
+========================= */
+
+::-webkit-scrollbar{
+width:6px;
+}
+
+::-webkit-scrollbar-track{
+background:#0b0f19;
+}
+
+::-webkit-scrollbar-thumb{
+background:#4f7cff;
+border-radius:10px;
+}
