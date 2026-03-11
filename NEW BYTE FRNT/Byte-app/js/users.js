@@ -86,3 +86,15 @@ res.status(500).json(err)
 })
 
 module.exports = router
+
+localStorage.setItem("user", JSON.stringify(user))
+
+if(!localStorage.getItem("user")){
+window.location="login.html"
+}
+
+try{
+const res = await fetch("/api/posts")
+}catch(err){
+alert("Network error")
+}
