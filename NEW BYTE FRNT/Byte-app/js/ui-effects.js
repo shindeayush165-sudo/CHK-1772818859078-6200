@@ -82,3 +82,15 @@ document.querySelectorAll(".avatar").forEach((img,i)=>{
 img.src = `https://i.pravatar.cc/150?img=${i+10}`
 
 })
+
+// LIKE BUTTON ANIMATION
+
+document.addEventListener("click",function(e){
+
+if(e.target.classList.contains("like-btn")){
+
+e.target.classList.toggle("active")
+
+}
+
+})
