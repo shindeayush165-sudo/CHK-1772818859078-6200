@@ -66,3 +66,11 @@ alert("Account created")
 window.location="index.html"
 
 }
+
+try{
+const res = await fetch("/api/posts")
+}catch(err){
+alert("Server error")
+}
+
+mongoose.connect("mongodb://127.0.0.1:27017/bytes")
