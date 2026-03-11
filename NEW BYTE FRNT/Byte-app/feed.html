@@ -78,8 +78,16 @@
 
 <button class="fab">+</button>
 
+<div class="create-post">
+<input id="postInput" placeholder="Share something...">
+<button onclick="createPost()">Post</button>
+</div>
+
+<div id="feed"></div>
 
 <!-- NAVIGATION -->
+
+<div id="loading">Loading...</div>
 
 <nav class="bottom-nav">
 
@@ -88,10 +96,10 @@
 <a href="explore.html">🔍</a>
 <a href="qa.html">❓</a>
 <a href="profile.html">👤</a>
-
+<button onclick="likePost('${post._id}')">❤️</button>
 </nav>
 <button onclick="createPost()">Post</button>
-
+<script src="js/ui-effects.js"></script>
 <script src="js/feed.js"></script>
 
 </body>
