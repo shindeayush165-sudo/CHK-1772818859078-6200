@@ -118,3 +118,122 @@ function likePost(){
 alert("Liked ❤️")
 
 }
+
+async function loadPosts(){
+
+const res = await fetch("http://localhost:5000/api/posts")
+
+const posts = await res.json()
+
+const feed = document.getElementById("feed")
+
+feed.innerHTML=""
+
+posts.forEach(post=>{
+
+feed.innerHTML += `
+<div class="post-card">
+<h3>${post.user}</h3>
+<p>${post.content}</p>
+</div>
+`
+
+})
+
+}
+
+loadPosts()
+
+async function createPost(){
+
+const text = document.getElementById("postInput").value
+
+await fetch("http://localhost:5000/api/posts",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+user:"Pranav",
+content:text
+})
+})
+
+loadPosts()
+
+}
+
+async function likePost(id){
+
+await fetch(`/api/posts/like/${id}`,{
+method:"PUT"
+})
+
+loadPosts()
+
+}
+
+localStorage.setItem("user",JSON.stringify(user))
+
+if(!localStorage.getItem("user")){
+window.location="login.html"
+}
+
+async function loadPosts(){
+
+const res = await fetch("http://localhost:5000/api/posts")
+
+const posts = await res.json()
+
+const feed = document.getElementById("feed")
+
+feed.innerHTML=""
+
+posts.forEach(post => {
+
+feed.innerHTML += `
+<div class="post-card">
+
+<div class="post-header">
+<img class="avatar" src="https://i.pravatar.cc/150">
+<div>
+<div class="post-user">${post.user}</div>
+<div class="post-time">${new Date(post.createdAt).toLocaleString()}</div>
+</div>
+</div>
+
+<div class="post-content">${post.content}</div>
+
+<div class="post-actions">
+<button onclick="likePost('${post._id}')">❤️ ${post.likes}</button>
+</div>
+
+</div>
+`
+
+})
+
+}
+
+loadPosts()
+
+async function createPost(){
+
+const text = document.getElementById("postInput").value
+
+await fetch("http://localhost:5000/api/posts",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+user:"Pranav",
+content:text
+})
+})
+
+document.getElementById("postInput").value=""
+
+loadPosts()
+
+}
