@@ -82,3 +82,67 @@ res.status(500).json(err)
 
 
 module.exports = router
+
+async function loadShorts(){
+
+const res = await fetch("http://localhost:5000/api/shorts")
+
+const shorts = await res.json()
+
+const container = document.querySelector(".shorts-container")
+
+shorts.forEach(short=>{
+
+container.innerHTML += `
+<div class="short">
+
+<iframe src="${short.video}/embed"></iframe>
+
+<div class="short-overlay">
+<h3>${short.creator}</h3>
+<p>${short.caption}</p>
+</div>
+
+</div>
+`
+
+})
+
+}
+
+loadShorts()
+
+async function loadShorts(){
+
+const res = await fetch("http://localhost:5000/api/shorts")
+
+const shorts = await res.json()
+
+const container = document.querySelector(".shorts-container")
+
+container.innerHTML=""
+
+shorts.forEach(short=>{
+
+container.innerHTML += `
+<div class="short">
+
+<iframe src="${short.video}/embed"></iframe>
+
+<div class="short-overlay">
+
+<div class="short-text">
+<h3>@${short.creator}</h3>
+<p>${short.caption}</p>
+</div>
+
+</div>
+
+</div>
+`
+
+})
+
+}
+
+loadShorts()
